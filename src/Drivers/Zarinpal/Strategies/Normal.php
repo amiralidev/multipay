@@ -76,6 +76,10 @@ class Normal extends Driver
             "metadata" => $this->metadata(),
         ];
 
+        if (isset($this->settings->wages)) {
+            $data['wages'] = $this->settings->wages;
+        }
+
         $response = $this
             ->client
             ->request(
